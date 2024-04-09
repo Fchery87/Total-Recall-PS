@@ -123,3 +123,91 @@ if (digit < 5) {
 } else {
   console.log('monkey');
 }
+
+//! SECTION #2
+
+//+ A. The basics
+// Write a loop that will print out all the numbers from 0 to 10, inclusive
+// Write a loop that will print out all the numbers from 10 up to and including 400
+// Write a loop that will print out every third number starting with 12 and going no higher than 4000
+
+// Loop to print numbers from 0 to 10
+console.log(`Numbers from 0 to 10:`);
+for (let i = 0; i <= 10; i++) {
+  console.log(i);
+}
+
+// Loop to print numbers from 10 to 400
+console.log(`Numbers from 10 to 400:`);
+for (let i = 10; i <= 400; i++) {
+  console.log(i);
+}
+
+// Loop to print every third number starting with 12 and up to 4000
+console.log(
+  `Every third number starting with 12 and going no higher than 4000:`
+);
+for (let i = 12; i <= 4000; i += 3) {
+  console.log(i);
+}
+
+//+ B. Get even
+// Print out the numbers that are within the range of 1 - 100
+// Adjust your code to add a message next to even numbers only that says: "is an even number"
+
+console.log(`Even numbers within the range of 1 to 100:`);
+for (let i = 1; i <= 100; i++) {
+  if (i % 2 === 0) {
+    console.log(i + ' is an even number');
+  }
+}
+
+//+ C. Give me Five
+// For the numbers 0 - 100, print out "I found a <number>. High five!" if the number is a multiple of five Example Output:
+
+console.log('Give me Five:');
+for (let i = 0; i <= 100; i++) {
+  if (i % 5 === 0 && i !== 0) {
+    console.log('I found a ' + i + '. High five!');
+  }
+}
+
+// Loop to print messages for numbers within the range of 0 to 100
+console.log('Give me Five and Three:');
+for (let i = 0; i <= 100; i++) {
+  if (i % 3 === 0 && i !== 0) {
+    console.log('I found a ' + i + '. Three is a crowd');
+  }
+  if (i % 5 === 0 && i !== 0) {
+    console.log('I found a ' + i + '. High five!');
+  }
+}
+
+//+ D. Savings account
+// Write code that will save the sum of all the numbers between 1 - 10 to a variable called bank_account.
+
+// Check your work! Your bank_account should have $55 in it.
+
+// You got a bonus! Your pay is now doubled each week. Write code that will save the sum of all the numbers between 1 - 100 multiplied by 2.
+
+// Check your work! Your bank_account should have $10,100 in it.
+
+// Save the sum of all numbers between 1 - 10 to a variable called bank_account
+let bank_account = 0;
+for (let i = 1; i <= 10; i++) {
+  bank_account += i;
+}
+
+// Check work!
+console.log('Bank Account (1 - 10): $' + bank_account);
+// Expected output: Bank Account (1 - 10): $55
+
+// Double the pay each week and save the sum of all numbers between 1 - 100 multiplied by 2
+bank_account = 0;
+for (let i = 1; i <= 100; i++) {
+  bank_account += i * 2;
+}
+
+// Check your work!
+console.log('Bank Account (1 - 100, doubled pay): $' + bank_account);
+// Expected output: Bank Account (1 - 100, doubled pay): $10100
