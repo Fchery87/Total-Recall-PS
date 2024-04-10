@@ -185,11 +185,8 @@ for (let i = 0; i <= 100; i++) {
 
 //+ D. Savings account
 // Write code that will save the sum of all the numbers between 1 - 10 to a variable called bank_account.
-
 // Check your work! Your bank_account should have $55 in it.
-
 // You got a bonus! Your pay is now doubled each week. Write code that will save the sum of all the numbers between 1 - 100 multiplied by 2.
-
 // Check your work! Your bank_account should have $10,100 in it.
 
 // Save the sum of all numbers between 1 - 10 to a variable called bank_account
@@ -211,3 +208,135 @@ for (let i = 1; i <= 100; i++) {
 // Check your work!
 console.log('Bank Account (1 - 100, doubled pay): $' + bank_account);
 // Expected output: Bank Account (1 - 100, doubled pay): $10100
+
+//! SECTION #3
+
+//+ ===== A. Talk about it in your group:
+// What are the things in an array called?
+// Elements can be of any data type such as numbers, strings, objects, etc.
+
+// Do Arrays guarantee those things will be in order? Yes, arrays in JavaScript maintain the order of elements.
+
+// What real-life thing could you model with an array? Shoppinglist.
+
+// example: let shoppingList = ["Apples", "Bananas", "Milk", "Bread", "Eggs"];
+// console.log(shoppingList)
+
+//+ ===== B. Easy Does It
+
+const quotes = [
+  'The only way to do great work is to love what you do. - Steve Jobs',
+  'Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill',
+  "In the end, it's not the years in your life that count. It's the life in your years. - Abraham Lincoln",
+];
+
+console.log(quotes);
+
+//+ ===== C. Accessing elements
+
+// Given the following array const randomThings = [1, 10, "Hello", true]
+// How do you access the 1st element in the array?
+// Change the value of "Hello"to "World"
+// Check the value of the array to make sure it updated the array. How? Why, yes! console.log();
+
+const randomThings = [1, 10, 'Hello', true];
+
+// Accessing the 1st element in the array
+const firstElement = randomThings[0];
+
+// Changing the value of "Hello" to "World"
+randomThings[2] = 'World';
+
+// Checking the value of the array to make sure it updated
+console.log(randomThings);
+
+//+ ===== D. Change values
+// Given the following array const ourClass = ["Salty", "Zoom", "Sardine", "Slack", "Github"];
+// What would you write to access the 3rd element of the array?
+// Change the value of "Github" to "Octocat"
+// Add a new element, "Cloud City" to the array
+
+const ourClass = ['Salty', 'Zoom', 'Sardine', 'Slack', 'Github'];
+
+// Accessing the 3rd element of the array
+const thirdElement = ourClass[2];
+
+// Changing the value of "Github" to "Octocat"
+ourClass[4] = 'Octocat';
+
+// Adding a new element, "Cloud City", to the array
+ourClass.push('Cloud City');
+
+//+ ===== E. Mix It Up
+// Given the following array: const myArray = [5, 10, 500, 20]
+// Add the string "Aegon"to the end of the array. Add another string of your choice to the end of the array.
+// Remove the 5from the beginning of the array.
+// Add the string "Bob Marley"to the beginning of the array.
+// Remove the string of your choice from the end of the array.
+// Reverse this array using Array.prototype.reverse(). Did you mutate the array? What does mutate mean? Did the .reverse()method return anything?
+
+const myArray = [5, 10, 500, 20];
+
+// Add the string "Aegon" to the end of the array
+myArray.push('Aegon');
+
+// Add another string of your choice to the end of the array
+myArray.push('Stark');
+
+// Remove the 5 from the beginning of the array
+myArray.shift();
+
+// Add the string "Bob Marley" to the beginning of the array
+myArray.unshift('Bob Marley');
+
+// Remove the string of your choice from the end of the array
+myArray.pop();
+
+// Reverse this array using Array.prototype.reverse()
+myArray.reverse();
+
+// Did you mutate the array? What does mutate mean?
+// Mutate means changing the original array directly. Yes, we mutated the array by using push, pop, shift, and unshift methods.
+
+// Did the .reverse() method return anything?
+// The reverse() method reverses the elements of the array in place and returns the reversed array.
+
+//+ ===== H. What's in Your Closet?
+// What's Kristyn wearing today? Using bracket notation to access items in kristynsCloset, log the sentence "Kristyn is rocking that " + the third item in Kristyn's closet + " today!" to the console.
+// Kristyn just bought some sweet shades! Add "raybans"to her closet after "yellow knit hat".
+// Kristyn spilled coffee on her hat... modify this item to read "stained knit hat"instead of yellow.
+// Put together an outfit for Thom! Using bracket notation, access the first element in Thom's shirtsarray.
+// In the same way, access one item from Thom's pants array.
+// Access one item from Thom's accessories array.
+// Log a sentence about what Thom's wearing. Example: "Thom is looking fierce in a grey button-up, jeans and wool scarf!"
+// Get more specific about what kind of PJs Thom's wearing this winter. Modify the name of his PJ pants to Footie Pajamas.
+
+// Kristyn is wearing today
+console.log('Kristyn is rocking that ' + kristynsCloset[2] + ' today!');
+
+// Kristyn just bought some sweet shades!
+kristynsCloset.push('raybans');
+
+// Kristyn spilled coffee on her hat...
+kristynsCloset[5] = 'stained knit hat';
+
+// Thom's outfit
+const thomsOutfit = [
+  thomsCloset[0][0], // Thom's shirt
+  thomsCloset[1][0], // Thom's pants
+  thomsCloset[2][1], // Thom's accessory
+];
+
+// Modify Thom's PJs
+thomsCloset[1][2] = 'Footie Pajamas';
+
+// Logging Thom's outfit
+console.log(
+  'Thom is looking fierce in a ' +
+    thomsOutfit[0] +
+    ', ' +
+    thomsOutfit[1] +
+    ', and ' +
+    thomsOutfit[2] +
+    '!'
+);
