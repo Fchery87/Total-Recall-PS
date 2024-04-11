@@ -1,4 +1,4 @@
-//! SECTION #1
+//! =========  SECTION #1 =========
 
 //+ A. Variables
 
@@ -91,7 +91,7 @@ if (personAge >= 16) {
   console.log("Sorry, you're too young. Take a Hike!");
 }
 
-//! SECTION #3
+//! =========  SECTION #3 =========
 
 //+ F. Biggie Smalls
 // Create a variable that contains an integer.
@@ -124,7 +124,7 @@ if (digit < 5) {
   console.log('monkey');
 }
 
-//! SECTION #2
+//! =========  SECTION #2 =========
 
 //+ A. The basics
 // Write a loop that will print out all the numbers from 0 to 10, inclusive
@@ -209,7 +209,7 @@ for (let i = 1; i <= 100; i++) {
 console.log('Bank Account (1 - 100, doubled pay): $' + bank_account);
 // Expected output: Bank Account (1 - 100, doubled pay): $10100
 
-//! SECTION #3
+//! =========  SECTION #3 =========
 
 //+ ===== A. Talk about it in your group:
 // What are the things in an array called?
@@ -340,3 +340,213 @@ console.log(
     thomsOutfit[2] +
     '!'
 );
+
+
+//! ========= SECTION #4 - Objects =========
+//+ A. Make a user object
+// Create an object called user.
+// Write in to the object the key-value pairs for name, email, age, and purchased. Set the value of purchased to an empty array []. Set the other values to whatever you would like.
+
+const user = {
+  name: 'John Doe',
+  email: 'john@example.com',
+  age: 30,
+  purchased: [],
+};
+
+console.log(user);
+
+//+ B. Update the user
+// Our user has changed his or her email address. Without changing the original user object, update the email value to a new email address.
+// Our user has had a birthday! Without changing the original user object, increment the age value using the postfix operator. Hint: age++
+
+let userName = {
+  name: "Michael Jordan",
+  email: "jordan@Airjordans.com",
+  age: 30,
+  purchased: []
+};
+
+let newEmail = "airjordan@nike.com";
+user.email = newEmail;
+user.age++;
+
+console.log(userName);
+
+//+ C. Adding keys and values
+// You have decided to add your user's location to the data that you want to collect.
+// Without changing the original user object, add a new key location to the object, and give it a value or some-or-other location (a string).
+
+let userInfo = {
+  name: "John Doe",
+  email: "john@example.com",
+  age: 30,
+  purchased: []
+};
+
+userInfo.location = "Some Location";
+
+console.log(userInfo);
+
+//+ D. Shopaholic!
+// Our user has purchased an item! They have purchased some "carbohydrates". Using .push(), add the string "carbohydrates" to the purchased array.
+// Our user has purchased an item! They have purchased some "peace of mind". Using .push(), add the string "peace of mind" to the purchased array.
+// Our user has purchased an item! They have purchased some "Merino jodhpurs". Using .push(), add the string "Merino jodhpurs" to the purchased array.
+// Console.log just the "Merino jodhpurs" from the purchased array.
+
+let customerInfo = {
+  name: "John Doe",
+  email: "john@example.com",
+  age: 30,
+  purchased: []
+};
+
+customerInfo.purchased.push("carbohydrates");
+customerInfo.purchased.push("peace of mind");
+customerInfo.purchased.push("Merino jodhpurs");
+
+console.log(customerInfo.purchased[2]);
+
+//+ E. Object-within-object
+// Write a friend object into your user object and give the friend a name, age, location, and purchased array (empty for now)
+// Console.log just the friend's name
+// Console.log just the friend's location
+// CHANGE the friend's age to 55
+// The friend has purchased "The One Ring". Use ``.push()to add "The One Ring" to the friend'spurchased` array.
+// The friend has purchased "A latte". Use .push() to add "A latte" to the friend's purchased array.
+// Console.log just "A latte" from the friend's purchased array.
+
+let user = {
+  name: "John Doe",
+  email: "john@example.com",
+  age: 30,
+  purchased: [],
+  friend: {
+      name: "Grace Hopper",
+      age: 85,
+      location: "Some Location",
+      purchased: []
+  }
+};
+
+console.log(user.friend.name);
+console.log(user.friend.location);
+user.friend.age = 55;
+user.friend.purchased.push("The One Ring");
+user.friend.purchased.push("A latte");
+
+console.log(user.friend.purchased[1]);
+
+//+ F. Loops
+// Write a for loop that iterates over the User's purchased array (NOT the friend's purchased array), and prints each element to the console.
+// Write a for loop that iterates over the Friend's purchased array, and prints each element to the console.
+
+let user = {
+  name: "John Doe",
+  email: "john@example.com",
+  age: 30,
+  purchased: ["carbohydrates", "peace of mind", "Merino jodhpurs"],
+  friend: {
+      name: "Grace Hopper",
+      age: 85,
+      location: "Some Location",
+      purchased: ["The One Ring", "A latte"]
+  }
+};
+
+console.log("User's purchased items:");
+for (let i = 0; i < user.purchased.length; i++) {
+  console.log(user.purchased[i]);
+}
+
+console.log("\nFriend's purchased items:");
+for (let i = 0; i < user.friend.purchased.length; i++) {
+  console.log(user.friend.purchased[i]);
+}
+
+
+//! ========= SECTION #4 - Functions =========
+
+//+ =========  A. printGreeting
+// Do you think you could write a function called printGreeting with a parameter name that returns a greeting with the argument interpolated into the greeting?
+
+function printGreeting(name) {
+  return `Hello there, ${name}!`;
+}
+
+console.log(printGreeting('Slimer'));
+
+//+ =========  B. printCool
+// Write a function printCool that accepts one parameter, name as an argument. The function should print the name and a message saying that that person is cool.
+
+function printCool(name) {
+  console.log(name + ' is cool');
+}
+
+console.log(printCool('Captain Reynolds'));
+
+//+ =========  C. calculateCube
+// Write a function calculateCube that takes a single number and prints the volume of a cube made from that number.
+
+function calculateCube(sides) {
+  let volume = sides ** 3;
+  console.log(volume);
+}
+
+console.log(calculateCube(5));
+
+//+ =========  D. isVowel
+// Write a function isVowelthat takes a character (i.e. a string of length 1) and returns true if it is a vowel, false otherwise. The vowel could be upper or lower case. Test your function on every vowel and make sure it's working. In general, when you write functions, take a minute to test them with different values to make sure they behave the way you want.
+
+function isVowel(character) {
+  const lowerCaseChar = character.toLowerCase();
+  if (
+    lowerCaseChar === 'a' ||
+    lowerCaseChar === 'e' ||
+    lowerCaseChar === 'i' ||
+    lowerCaseChar === 'o' ||
+    lowerCaseChar === 'u'
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+// Test the function with every vowel
+console.log(isVowel('a'));
+console.log(isVowel('e'));
+console.log(isVowel('i'));
+console.log(isVowel('o'));
+console.log(isVowel('u'));
+
+//+ ========= E. getTwoLengths
+// Write a function getTwoLengths that accepts two parameters (strings). The function should return an array of numbers where each number is the length of the corresponding string.
+
+function getTwoLengths(string1, string2) {
+  let lengths = [];
+
+  lengths.push(string1.length);
+  lengths.push(string2.length);
+
+  return lengths;
+}
+
+console.log(getTwoLengths('Hank', 'Hippopopalous'));
+
+//+ ========= F. getMultipleLengths
+// Write a function getMultipleLengths that accepts a single parameter as an argument: an array of strings. The function should return an array of numbers where each number is the length of the corresponding string.
+
+function getMultipleLengths(arrayOfStrings) {
+  let lengths = [];
+
+  for (let i = 0; i < arrayOfStrings.length; i++) {
+    lengths.push(arrayOfStrings[i].length);
+  }
+
+  return lengths;
+}
+
+console.log(getMultipleLengths(['hello', 'what', 'is', 'up', 'dude']));
+
+
