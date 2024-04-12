@@ -341,7 +341,6 @@ console.log(
     '!'
 );
 
-
 //! ========= SECTION #4 - Objects =========
 //+ A. Make a user object
 // Create an object called user.
@@ -361,13 +360,13 @@ console.log(user);
 // Our user has had a birthday! Without changing the original user object, increment the age value using the postfix operator. Hint: age++
 
 let userName = {
-  name: "Michael Jordan",
-  email: "jordan@Airjordans.com",
+  name: 'Michael Jordan',
+  email: 'jordan@Airjordans.com',
   age: 30,
-  purchased: []
+  purchased: [],
 };
 
-let newEmail = "airjordan@nike.com";
+let newEmail = 'airjordan@nike.com';
 user.email = newEmail;
 user.age++;
 
@@ -378,13 +377,13 @@ console.log(userName);
 // Without changing the original user object, add a new key location to the object, and give it a value or some-or-other location (a string).
 
 let userInfo = {
-  name: "John Doe",
-  email: "john@example.com",
+  name: 'John Doe',
+  email: 'john@example.com',
   age: 30,
-  purchased: []
+  purchased: [],
 };
 
-userInfo.location = "Some Location";
+userInfo.location = 'Some Location';
 
 console.log(userInfo);
 
@@ -395,15 +394,15 @@ console.log(userInfo);
 // Console.log just the "Merino jodhpurs" from the purchased array.
 
 let customerInfo = {
-  name: "John Doe",
-  email: "john@example.com",
+  name: 'John Doe',
+  email: 'john@example.com',
   age: 30,
-  purchased: []
+  purchased: [],
 };
 
-customerInfo.purchased.push("carbohydrates");
-customerInfo.purchased.push("peace of mind");
-customerInfo.purchased.push("Merino jodhpurs");
+customerInfo.purchased.push('carbohydrates');
+customerInfo.purchased.push('peace of mind');
+customerInfo.purchased.push('Merino jodhpurs');
 
 console.log(customerInfo.purchased[2]);
 
@@ -417,23 +416,23 @@ console.log(customerInfo.purchased[2]);
 // Console.log just "A latte" from the friend's purchased array.
 
 let user = {
-  name: "John Doe",
-  email: "john@example.com",
+  name: 'John Doe',
+  email: 'john@example.com',
   age: 30,
   purchased: [],
   friend: {
-      name: "Grace Hopper",
-      age: 85,
-      location: "Some Location",
-      purchased: []
-  }
+    name: 'Grace Hopper',
+    age: 85,
+    location: 'Some Location',
+    purchased: [],
+  },
 };
 
 console.log(user.friend.name);
 console.log(user.friend.location);
 user.friend.age = 55;
-user.friend.purchased.push("The One Ring");
-user.friend.purchased.push("A latte");
+user.friend.purchased.push('The One Ring');
+user.friend.purchased.push('A latte');
 
 console.log(user.friend.purchased[1]);
 
@@ -442,16 +441,16 @@ console.log(user.friend.purchased[1]);
 // Write a for loop that iterates over the Friend's purchased array, and prints each element to the console.
 
 let user = {
-  name: "John Doe",
-  email: "john@example.com",
+  name: 'John Doe',
+  email: 'john@example.com',
   age: 30,
-  purchased: ["carbohydrates", "peace of mind", "Merino jodhpurs"],
+  purchased: ['carbohydrates', 'peace of mind', 'Merino jodhpurs'],
   friend: {
-      name: "Grace Hopper",
-      age: 85,
-      location: "Some Location",
-      purchased: ["The One Ring", "A latte"]
-  }
+    name: 'Grace Hopper',
+    age: 85,
+    location: 'Some Location',
+    purchased: ['The One Ring', 'A latte'],
+  },
 };
 
 console.log("User's purchased items:");
@@ -463,7 +462,6 @@ console.log("\nFriend's purchased items:");
 for (let i = 0; i < user.friend.purchased.length; i++) {
   console.log(user.friend.purchased[i]);
 }
-
 
 //! ========= SECTION #4 - Functions =========
 
@@ -549,4 +547,44 @@ function getMultipleLengths(arrayOfStrings) {
 
 console.log(getMultipleLengths(['hello', 'what', 'is', 'up', 'dude']));
 
+//+ ========= G. maxOfThree
+// Define a function maxOfThree that takes three numbers as arguments and returns the largest of them. If all numbers are the same, it doesn't matter which one is returned. If the two largest numbers are the same, one of them should be returned. Be sure to test it with larger values in each of the three locations.
 
+function maxOfThree(num1, num2, num3) {
+  if (num1 >= num2 && num1 >= num3) {
+    return num1;
+  } else if (num2 >= num1 && num2 >= num3) {
+    return num2;
+  } else {
+    return num3;
+  }
+}
+
+console.log(maxOfThree(6, 9, 1));
+
+// //+ ========= H. printLongestWord
+// Write a function printLongestWord that accepts a single argument, an array of strings. The method should return the longest word in the array. In case of a tie, the method should return the word that appears first in the array.
+
+function printLongestWord(words) {
+  let longestWord = '';
+  for (let i = 0; i < words.length; i++) {
+    if (words[i].length > longestWord.length) {
+      longestWord = words[i];
+    }
+  }
+
+  return longestWord;
+}
+
+console.log(
+  printLongestWord([
+    'BoJack',
+    'Princess',
+    'Diane',
+    'a',
+    'Max',
+    'Peanutbutter',
+    'big',
+    'Todd',
+  ])
+); // Output: "Peanutbutter"
